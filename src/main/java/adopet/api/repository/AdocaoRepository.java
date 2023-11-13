@@ -6,6 +6,4 @@ import org.springframework.data.jpa.repository.JpaRepository;
 
 public interface AdocaoRepository extends JpaRepository<Adocao,Long> {
 
-    Integer countByTutorId(Long idTutor);
-    Integer countByTutorIdAndStatus(Long idTutor, StatusAdocao status);
 }
