@@ -10,7 +10,7 @@ public class PilhaDeExecucao {
     public static void metodo2() {
         System.out.println("[Inicio] - metodo2");
 
-        Usuario usuario = new Usuario("Vinicius");
+        Usuario usuario = null;
         System.out.println(usuario.nome);
 
         System.out.println("[Fim] - metodo2");
