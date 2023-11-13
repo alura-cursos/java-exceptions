@@ -4,6 +4,7 @@ import adopet.api.dto.AdocaoDTO;
 import adopet.api.dto.AprovarAdocaoDTO;
 import adopet.api.dto.ReprovarAdocaoDTO;
 import adopet.api.dto.SolicitacaoDeAdocaoDTO;
+<<<<<<< HEAD
 import adopet.api.exception.AdocaoException;
 import adopet.api.service.AdocaoService;
 <<<<<<< HEAD
@@ -17,6 +18,11 @@ import jakarta.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
 >>>>>>> c59dc4d (Projeto inicial)
 =======
+import jakarta.validation.Valid;
+import org.springframework.beans.factory.annotation.Autowired;
+>>>>>>> c59dc4d (Projeto inicial)
+=======
+import adopet.api.service.AdocaoService;
 import jakarta.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
 >>>>>>> c59dc4d (Projeto inicial)
@@ -50,6 +56,7 @@ public class AdocaoController {
     public ResponseEntity<String> solicitar(@RequestBody @Valid SolicitacaoDeAdocaoDTO dados){
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 
         try {
             this.service.solicitar(dados);
@@ -68,12 +75,16 @@ public class AdocaoController {
             return ResponseEntity.status(HttpStatus.BAD_REQUEST).body(ex.getMessage());
         }
 >>>>>>> 7c11c14 (3.2 Lançando exceções)
+=======
+        this.service.solicitar(dados);
+>>>>>>> c59dc4d (Projeto inicial)
         return ResponseEntity.ok("Adoção solicitada com sucesso!");
     }
 
     @PutMapping("/aprovar")
     @Transactional
     public ResponseEntity<String> aprovar(@RequestBody @Valid AprovarAdocaoDTO dto){
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 
@@ -83,6 +94,9 @@ public class AdocaoController {
             return ResponseEntity.status(HttpStatus.NOT_FOUND).body("Adocao não encontrada");
         }
 
+=======
+        this.service.aprovar(dto);
+>>>>>>> c59dc4d (Projeto inicial)
 =======
         this.service.aprovar(dto);
 >>>>>>> c59dc4d (Projeto inicial)
