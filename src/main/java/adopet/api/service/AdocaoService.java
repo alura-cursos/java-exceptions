@@ -39,6 +39,7 @@ public class AdocaoService {
         Pet pet = petRepository.getReferenceById(dto.idPet());
         Tutor tutor = tutorRepository.getReferenceById(dto.idTutor());
 
+<<<<<<< HEAD
         //Pet já adotado;
         if(pet.getAdotado()){
             throw new IllegalStateException("Pet já adotado");
@@ -59,6 +60,8 @@ public class AdocaoService {
             throw new IllegalStateException("Tutor com máximo de adocoes");
         }
 
+=======
+>>>>>>> c59dc4d (Projeto inicial)
         adocaoRepository.save(new Adocao(tutor,pet, dto.motivo()));
     }
 
