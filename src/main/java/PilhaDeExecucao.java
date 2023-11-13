@@ -11,7 +11,9 @@ public class PilhaDeExecucao {
         System.out.println("[Inicio] - metodo2");
 
         Usuario usuario = null;
-        System.out.println(usuario.nome);
+
+            System.out.println(usuario.nome);
+
 
         System.out.println("[Fim] - metodo2");
     }
@@ -19,7 +21,11 @@ public class PilhaDeExecucao {
     public static void main(String[] args) {
         System.out.println("[Inicio] - main");
 
-        metodo1();
+        try {
+            metodo1();
+        }catch (NullPointerException ex){
+            System.out.println("Usuário não encontrado");
+        }
 
         System.out.println("[Fim] - main");
     }
