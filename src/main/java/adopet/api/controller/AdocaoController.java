@@ -5,10 +5,15 @@ import adopet.api.dto.AprovarAdocaoDTO;
 import adopet.api.dto.ReprovarAdocaoDTO;
 import adopet.api.dto.SolicitacaoDeAdocaoDTO;
 import adopet.api.service.AdocaoService;
+<<<<<<< HEAD
 import jakarta.persistence.EntityNotFoundException;
 import jakarta.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
+=======
+import jakarta.validation.Valid;
+import org.springframework.beans.factory.annotation.Autowired;
+>>>>>>> c59dc4d (Projeto inicial)
 import org.springframework.http.ResponseEntity;
 import org.springframework.transaction.annotation.Transactional;
 import org.springframework.web.bind.annotation.*;
@@ -44,6 +49,7 @@ public class AdocaoController {
     @PutMapping("/aprovar")
     @Transactional
     public ResponseEntity<String> aprovar(@RequestBody @Valid AprovarAdocaoDTO dto){
+<<<<<<< HEAD
 
         try{
             this.service.aprovar(dto);
@@ -51,6 +57,9 @@ public class AdocaoController {
             return ResponseEntity.status(HttpStatus.NOT_FOUND).body("Adocao não encontrada");
         }
 
+=======
+        this.service.aprovar(dto);
+>>>>>>> c59dc4d (Projeto inicial)
         return ResponseEntity.ok().build();
     }
 

@@ -11,10 +11,15 @@ public class PilhaDeExecucao {
         System.out.println("[Inicio] - metodo2");
 
 <<<<<<< HEAD
+<<<<<<< HEAD
         Usuario usuario = null;
 
             System.out.println(usuario.nome);
 
+=======
+        Usuario usuario = new Usuario("Vinicius");
+        System.out.println(usuario.nome);
+>>>>>>> c59dc4d (Projeto inicial)
 =======
         Usuario usuario = new Usuario("Vinicius");
         System.out.println(usuario.nome);
@@ -27,11 +32,15 @@ public class PilhaDeExecucao {
         System.out.println("[Inicio] - main");
 
 <<<<<<< HEAD
+<<<<<<< HEAD
         try {
             metodo1();
         }catch (NullPointerException ex){
             System.out.println("Usuário não encontrado");
         }
+=======
+        metodo1();
+>>>>>>> c59dc4d (Projeto inicial)
 =======
         metodo1();
 >>>>>>> c59dc4d (Projeto inicial)
