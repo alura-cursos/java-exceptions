@@ -48,6 +48,7 @@ public class AdocaoController {
     @Transactional
     public ResponseEntity<String> solicitar(@RequestBody @Valid SolicitacaoDeAdocaoDTO dados){
 <<<<<<< HEAD
+<<<<<<< HEAD
 
         try {
             this.service.solicitar(dados);
@@ -58,6 +59,14 @@ public class AdocaoController {
 =======
         this.service.solicitar(dados);
 >>>>>>> c59dc4d (Projeto inicial)
+=======
+
+        try {
+            this.service.solicitar(dados);
+        }catch (IllegalStateException ex){
+            return ResponseEntity.status(HttpStatus.BAD_REQUEST).body(ex.getMessage());
+        }
+>>>>>>> 7c11c14 (3.2 Lançando exceções)
         return ResponseEntity.ok("Adoção solicitada com sucesso!");
     }
 
