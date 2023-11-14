@@ -44,6 +44,7 @@ public class AdocaoController {
     @PutMapping("/aprovar")
     @Transactional
     public ResponseEntity<String> aprovar(@RequestBody @Valid AprovarAdocaoDTO dto){
+
         try{
             this.service.aprovar(dto);
         }catch (EntityNotFoundException ex){
