@@ -58,21 +58,26 @@ public class AdocaoService {
 =======
         //Pet já adotado;
         if(pet.getAdotado()){
-
+            throw new IllegalStateException("Pet já adotado");
         }
 
         //Pet com solicitação de adoção em andamento;
-        Boolean petAdocaoEmAndamento = adocaoRepository.existsPetIdAndStatus(dto.idPet(),StatusAdocao.AGUARDANDO_AVALIACAO);
+        Boolean petAdocaoEmAndamento = adocaoRepository.existsByPetIdAndStatus(dto.idPet(),StatusAdocao.AGUARDANDO_AVALIACAO);
 
         if(petAdocaoEmAndamento){
+<<<<<<< HEAD
 
 >>>>>>> e463c77 (3.1 Adicionando valicacoes)
+=======
+            throw new UnsupportedOperationException("Pet com adocão em andamento");
+>>>>>>> 7c11c14 (3.2 Lançando exceções)
         }
 
         //Tutor com 2 adoções aprovadas.
 
         Integer tutorAdocoes = adocaoRepository.countByTutorIdAndStatus(dto.idTutor(),StatusAdocao.APROVADO);
 
+<<<<<<< HEAD
 <<<<<<< HEAD
         if (tutorAdocoes == 2){
             throw new AdocaoException("Tutor com máximo de adocoes");
@@ -83,6 +88,10 @@ public class AdocaoService {
 =======
         if (tutorAdocoes > 2){
 
+=======
+        if (tutorAdocoes == 2){
+            throw new IllegalStateException("Tutor com máximo de adocoes");
+>>>>>>> 7c11c14 (3.2 Lançando exceções)
         }
 
 >>>>>>> e463c77 (3.1 Adicionando valicacoes)

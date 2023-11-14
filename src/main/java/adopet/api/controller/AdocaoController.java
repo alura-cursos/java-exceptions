@@ -57,6 +57,7 @@ public class AdocaoController {
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 
         try {
             this.service.solicitar(dados);
@@ -68,16 +69,21 @@ public class AdocaoController {
         this.service.solicitar(dados);
 >>>>>>> c59dc4d (Projeto inicial)
 =======
+=======
+>>>>>>> 7c11c14 (3.2 Lançando exceções)
 
         try {
             this.service.solicitar(dados);
         }catch (IllegalStateException ex){
             return ResponseEntity.status(HttpStatus.BAD_REQUEST).body(ex.getMessage());
         }
+<<<<<<< HEAD
 >>>>>>> 7c11c14 (3.2 Lançando exceções)
 =======
         this.service.solicitar(dados);
 >>>>>>> c59dc4d (Projeto inicial)
+=======
+>>>>>>> 7c11c14 (3.2 Lançando exceções)
         return ResponseEntity.ok("Adoção solicitada com sucesso!");
     }
 
