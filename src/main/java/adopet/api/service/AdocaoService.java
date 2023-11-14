@@ -39,6 +39,26 @@ public class AdocaoService {
         Pet pet = petRepository.getReferenceById(dto.idPet());
         Tutor tutor = tutorRepository.getReferenceById(dto.idTutor());
 
+        //Pet já adotado;
+        if(pet.getAdotado()){
+
+        }
+
+        //Pet com solicitação de adoção em andamento;
+        Boolean petAdocaoEmAndamento = adocaoRepository.existsPetIdAndStatus(dto.idPet(),StatusAdocao.AGUARDANDO_AVALIACAO);
+
+        if(petAdocaoEmAndamento){
+
+        }
+
+        //Tutor com 2 adoções aprovadas.
+
+        Integer tutorAdocoes = adocaoRepository.countByTutorIdAndStatus(dto.idTutor(),StatusAdocao.APROVADO);
+
+        if (tutorAdocoes > 2){
+
+        }
+
         adocaoRepository.save(new Adocao(tutor,pet, dto.motivo()));
     }
 
