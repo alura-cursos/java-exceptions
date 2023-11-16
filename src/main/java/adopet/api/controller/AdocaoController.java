@@ -4,6 +4,7 @@ import adopet.api.dto.AdocaoDTO;
 import adopet.api.dto.AprovarAdocaoDTO;
 import adopet.api.dto.ReprovarAdocaoDTO;
 import adopet.api.dto.SolicitacaoDeAdocaoDTO;
+import adopet.api.exception.AdocaoException;
 import adopet.api.service.AdocaoService;
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -52,7 +53,7 @@ public class AdocaoController {
 
         try {
             this.service.solicitar(dados);
-        }catch (IllegalStateException | UnsupportedOperationException  ex){
+        }catch (AdocaoException ex){
             return ResponseEntity.status(HttpStatus.BAD_REQUEST).body(ex.getMessage());
         }
 

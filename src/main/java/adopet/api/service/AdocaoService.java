@@ -1,6 +1,7 @@
 package adopet.api.service;
 
 import adopet.api.dto.*;
+import adopet.api.exception.AdocaoException;
 import adopet.api.model.Adocao;
 import adopet.api.model.Pet;
 import adopet.api.model.StatusAdocao;
@@ -39,58 +40,26 @@ public class AdocaoService {
         Pet pet = petRepository.getReferenceById(dto.idPet());
         Tutor tutor = tutorRepository.getReferenceById(dto.idTutor());
 
-<<<<<<< HEAD
-<<<<<<< HEAD
         //Pet já adotado;
         if(pet.getAdotado()){
-            throw new IllegalStateException("Pet já adotado");
+            throw new AdocaoException("Pet já adotado");
         }
 
         //Pet com solicitação de adoção em andamento;
         Boolean petAdocaoEmAndamento = adocaoRepository.existsByPetIdAndStatus(dto.idPet(),StatusAdocao.AGUARDANDO_AVALIACAO);
 
         if(petAdocaoEmAndamento){
-            throw new UnsupportedOperationException("Pet com adocão em andamento");
-=======
-        //Pet já adotado;
-        if(pet.getAdotado()){
-            throw new IllegalStateException("Pet já adotado");
-        }
-
-        //Pet com solicitação de adoção em andamento;
-        Boolean petAdocaoEmAndamento = adocaoRepository.existsByPetIdAndStatus(dto.idPet(),StatusAdocao.AGUARDANDO_AVALIACAO);
-
-        if(petAdocaoEmAndamento){
-<<<<<<< HEAD
-
->>>>>>> e463c77 (3.1 Adicionando valicacoes)
-=======
-            throw new UnsupportedOperationException("Pet com adocão em andamento");
->>>>>>> 7c11c14 (3.2 Lançando exceções)
+            throw new AdocaoException("Pet com adocão em andamento");
         }
 
         //Tutor com 2 adoções aprovadas.
 
         Integer tutorAdocoes = adocaoRepository.countByTutorIdAndStatus(dto.idTutor(),StatusAdocao.APROVADO);
 
-<<<<<<< HEAD
-<<<<<<< HEAD
         if (tutorAdocoes == 2){
-            throw new IllegalStateException("Tutor com máximo de adocoes");
+            throw new AdocaoException("Tutor com máximo de adocoes");
         }
 
-=======
->>>>>>> c59dc4d (Projeto inicial)
-=======
-        if (tutorAdocoes > 2){
-
-=======
-        if (tutorAdocoes == 2){
-            throw new IllegalStateException("Tutor com máximo de adocoes");
->>>>>>> 7c11c14 (3.2 Lançando exceções)
-        }
-
->>>>>>> e463c77 (3.1 Adicionando valicacoes)
         adocaoRepository.save(new Adocao(tutor,pet, dto.motivo()));
     }
 
