@@ -5,6 +5,9 @@ import adopet.api.dto.AprovarAdocaoDTO;
 import adopet.api.dto.ReprovarAdocaoDTO;
 import adopet.api.dto.SolicitacaoDeAdocaoDTO;
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> 1d03577 (4.2-Lancando nossa excecao)
 import adopet.api.exception.AdocaoException;
 import adopet.api.service.AdocaoService;
 <<<<<<< HEAD
