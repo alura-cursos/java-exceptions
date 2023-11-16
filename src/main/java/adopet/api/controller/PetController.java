@@ -10,6 +10,7 @@ import org.springframework.transaction.annotation.Transactional;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.multipart.MultipartFile;
 
+import java.io.IOException;
 import java.util.List;
 
 @RestController
@@ -29,7 +30,11 @@ public class PetController {
     @Transactional
     public ResponseEntity<String> cadastrar(@RequestPart @Valid CadastroPetDTO dados,
                                             @RequestParam MultipartFile imagem){
-        service.cadastrar(dados, imagem);
+        try{
+            service.cadastrar(dados, imagem);
+        }catch (IOException ex){
+            ResponseEntity.badRequest().body(ex.getMessage());
+        }
         return ResponseEntity.ok().build();
     }
 }
